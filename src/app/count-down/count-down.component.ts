@@ -12,7 +12,7 @@ import { AsyncPipe, DatePipe } from '@angular/common';
 })
   export class CountDownComponent {
 
-    @Input() seconds = 300;
+    @Input() seconds = 400;
   
     timeRemaining$ = timer(0, 1000).pipe(
       map(n => (this.seconds - n) * 1000),
