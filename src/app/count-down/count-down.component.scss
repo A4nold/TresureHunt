@@ -1,0 +1,126 @@
+
+.digital-clock{
+    display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 3rem;
+      font-weight: bold;
+      margin: 20px 0;
+      color: #333;
+      text-align: center;
+      width: 100%;
+}
+
+button{
+    transform: scale(1.5);
+    transition: transform 0.3s ease;
+}
+button:hover {
+    transform: scale(1.7);
+  }
+h1{
+    margin: 20px;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+  }
+
+  .content {
+    display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      padding-top: 64px;
+      overflow-y: auto;
+  }
+
+  .timer-section {
+    width: 100%;
+      max-width: 600px; /* Reduced width for better centering */
+      margin: 0 auto;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .timer-section > div {
+    width: 100%; /* Ensure full width of the column */
+    display: flex;
+    justify-content: center;
+  }
+
+  mat-card {
+    width: 100%;
+    max-width: 500px; /* Optional: limit card width */
+  }
+
+  .timer-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+  }
+
+  .hint-section {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .hint-section > mat-card {
+    width: 100%;
+    max-width: 500px; /* Optional: limit card width */
+    text-align: center;
+  }
+
+  .link-grid {
+    max-width: 800px;
+    width: 100%;
+    padding: 20px;
+  }
+
+  @media (max-width: 600px) {
+    .digital-clock {
+        font-size: 2rem;
+      }
+
+      .timer-actions {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .timer-actions button {
+        width: 50%;
+        max-width: 300px;
+      }
+      mat-card {
+        width: 95%; /* Ensure cards are responsive on small screens */
+        max-width: none;
+      }
+    // .link-grid {
+    //   max-width: 100%;
+    // }
+    // button {
+    //   transform: scale(1.2);
+    // }
+    // button:hover {
+    //   transform: scale(1.3);
+    // }
+  }

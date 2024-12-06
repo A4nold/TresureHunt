@@ -1,3 +1,55 @@
-<p> 
-    {{ timeRemaining$ | async | date:'mm:ss' }}
-</p>
+<div class="container">
+    <mat-toolbar color="primary" class="header">
+        <span>My Links and timer</span>
+    </mat-toolbar>
+
+    <div class="content">
+        <h1>Start Timer For Next Hint</h1>
+        <div class="row timer-section">
+            <div class="col-md-12 mat-elevation-2">
+                <mat-card>
+                    <mat-card-content>
+                        <div class="digital-clock">
+                            <span>{{formatTime(seconds)}}</span>
+                        </div>
+                    </mat-card-content>
+                    <mat-card-actions class="timer-actions">
+                        <button mat-raised-button color="primary" (click)="toggleTimer()">
+                            {{timerRunning ? 'Pause':'Restart'}}
+                        </button>
+            
+                        <button mat-raised-button color="accent" (click)="resetTimer()">Start</button>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+
+            <div class="col-md-12 mat-elevation-2 hint-section" *ngIf="showHint">
+                <mat-card>
+                    <mat-card-content>
+                        <p>{{displayHints(this.counter)}}</p>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+
+        <div class="link-grid">
+            <mat-grid-list cols="3" rowHeight="1:1">
+                <mat-grid-tile>
+                  <button mat-fab color="accent" (click)="openLink('github')">
+                    <mat-icon>facebook</mat-icon>
+                  </button>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                  <button mat-fab color="accent" (click)="openLink('linkedin')">
+                    <mat-icon>twitter</mat-icon>
+                  </button>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                  <button mat-fab color="accent" (click)="openLink('email')">
+                    <mat-icon>dexscreener</mat-icon>
+                  </button>
+                </mat-grid-tile>
+              </mat-grid-list>
+        </div>
+    </div>
+</div>
